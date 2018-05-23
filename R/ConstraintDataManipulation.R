@@ -1,5 +1,4 @@
 #Constraint Data Manipulations functions
-
 #createConstraint
 createConstraint<-function(W_S = get("W_S_default"),
                            constraint = get("constraint"),
@@ -21,7 +20,6 @@ createConstraint<-function(W_S = get("W_S_default"),
   }
   return(W_S)
 }
-
 
 
 
@@ -62,3 +60,5 @@ locateConstraint<-function(data){
   abline(h = optimC["Min"])
   return(optimC)
 }
+
+

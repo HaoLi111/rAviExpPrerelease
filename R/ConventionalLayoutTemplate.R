@@ -73,9 +73,9 @@ Concept.template<-list(fuselage = fuselage.template,
                        WV = Wing.template)
 
 
+fuse_concept = function(WM,WH,WV,fuselage) list(WM = WM,WH = WH,WV =  WV,fuselage  = fuselage)
 
-
-save_concept<-function(name = "my_concept",concept=my_concept){
+save_concept<-function(name ='untitled',concept=my_concept){
   write.csv(as.data.frame(as.vector(concept$fuselage)),paste(name,"fuselage.csv",sep = "_"))
   write.csv(as.data.frame(as.vector(concept$WM)),paste(name,"WM.csv",sep="_"))
   write.csv(as.data.frame(as.vector(concept$WH)),paste(name,"WH.csv",sep="_"))
@@ -85,7 +85,7 @@ save_concept<-function(name = "my_concept",concept=my_concept){
 
 
 
-load_concept<-function(name = "my_concept"){
+load_concept<-function(name = 'untitled'){
   fuselage<-as.list(as.data.frame(read.csv(paste(name,"fuselage.csv",sep = "_"),header = T)))
   WM<-as.list(as.data.frame(read.csv(paste(name,"WM.csv",sep="_"),header = T)))
   WH<-as.list(as.data.frame(read.csv(paste(name,"WH.csv",sep="_"),header = T)))

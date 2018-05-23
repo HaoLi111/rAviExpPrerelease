@@ -30,7 +30,7 @@ CGM<-function(m){
 #
 
 
-Stability_conventional1<-function(concept,load = c(0,0,0,0),state = list(Cl = .8)){
+checkStability_conventional1<-function(concept,load = c(0,0,0,0),state = list(Cl = .8)){
   #M---------------------------------------------------
   Main_xF<-xF_trap(concept$WM$CordR,concept$WM$CordT,
                    span = concept$WM$Span,
@@ -173,19 +173,17 @@ Stability_conventional1<-function(concept,load = c(0,0,0,0),state = list(Cl = .8
 
 
   Balance = list(NP = NP,SM =S_M_(X_np = NP,X_cg = CM$x,cord = Main_C))
-  message(paste('X.NP =',NP,'X.CG =',CM$x))
-  message(staCheck(Balance$SM))
-  message(VvCheck(Sizing$Vv))
-  message(VhCheck(Sizing$Vh))
-  message(BCheck(Sizing$B))
-  message(VvBCheck(Sizing$VvB))
+  #message(paste('X.NP =',NP,'X.CG =',CM$x))
+  #message(staCheck(Balance$SM))
+  #message(VvCheck(Sizing$Vv))
+  #message(VhCheck(Sizing$Vh))
+  #message(BCheck(Sizing$B))
+  #message(VvBCheck(Sizing$VvB))
   AutoCheck = list(staCheck(Balance$SM),
                    VvCheck(Sizing$Vv),
+                   VhCheck(Sizing$Vh),
                    BCheck(Sizing$B),
                    VvBCheck(Sizing$VvB))
-  list(CM = CM,AF = AF,Balance = Balance,Sizing = Sizing, State = state)
+  list(CM = CM,AF = AF,Balance = Balance,Sizing = Sizing, State = state,AutoCheck = AutoCheck)
 }
 
-checkStability = function(concept,load,state = list(Cl = .8)){
-  #sta
-}

@@ -5,7 +5,15 @@ loadAirfoil<-function(airfoil){
   return(af)
 }
 
-drawAirfoil<-function(airfoil){
-  plot(airfoil[,1],airfoil[,2],type = "l",asp = 1,xlab="Relative X axis",
-       ylab = "Relative Y axis",main = deparse(substitute(airfoil)))
+drawAirfoil<-function(airfoil,points=F){
+  if(points == F){
+    plot(airfoil[,1],airfoil[,2],type = "l",asp = 1,xlab="Relative X axis",
+                      ylab = "Relative Y axis",main = deparse(substitute(airfoil)))
+  }else{
+    points(airfoil[,1],airfoil[,2],type = "l")
+    }
+
 }
+
+zoomAirfoil<-function(airfoil,n) airfoil*n
+

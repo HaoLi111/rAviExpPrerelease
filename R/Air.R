@@ -22,7 +22,7 @@ completeQ<-function(constraintstate){
 	constraintstate$q<-q(constraintstate$v,constraintstate$H)
 	constraintstate
 }
-#compl
+#completeRho
 completeRho<-function(constraintstate){
   constraintstate$rho = rhoFromH(H = constraint$H)
 }
